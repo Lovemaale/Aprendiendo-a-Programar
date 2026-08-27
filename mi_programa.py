@@ -1,8 +1,8 @@
 print("Hola mundo?????")
 
-mi_nombre = "Aleja"
+mi_nombre = input("Escriba su nombre:")
 
-print(mi_nombre)
+print("Hola" + mi_nombre)
 
 numero_1 = 3
 numero_2 = 6
