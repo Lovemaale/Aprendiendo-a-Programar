@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Perfil personal de Maria Alejandra Peña Vargas, estudiante de Inteligencia Artificial.">
+	<title>Maria Alejandra Peña Vargas | Mi mundo creativo</title>
+	<style>
+		:root {
+			--ink: #20243a;
+			--muted: #70758b;
+			--pink: #f7b8c8;
+			--pink-light: #fff0f4;
+			--blue: #b9dff1;
+			--blue-light: #edf8fc;
+			--lilac: #ddd5f2;
+			--yellow: #ffe8a8;
+			--white: #ffffff;
+			--shadow: 0 18px 45px rgba(68, 77, 112, 0.12);
+		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: #fffafd;
+			font-family: Georgia, "Times New Roman", serif;
+			line-height: 1.6;
+		}
+
+		h1, h2, h3, p { margin-top: 0; }
+
+		h1, h2, h3, nav, .tag, .eyebrow, .fact-label, .button {
+			font-family: "Trebuchet MS", Arial, sans-serif;
+		}
+
+		a { color: inherit; }
+
+		.topbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+			max-width: 1240px;
+			margin: 0 auto;
+			padding: 22px 32px;
+		}
+
+		.brand {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font: 700 1rem/1 "Trebuchet MS", Arial, sans-serif;
+			letter-spacing: .02em;
+		}
+
+		.brand-mark {
+			display: grid;
+			width: 38px;
+			height: 38px;
+			place-items: center;
+			border-radius: 13px 13px 13px 4px;
+			color: var(--white);
+			background: var(--ink);
+		}
+
+		nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: .8rem; font-weight: 700; }
+		nav a { text-decoration: none; }
+		nav a:hover, nav a:focus { color: #ca718d; }
+
+		.hero {
+			position: relative;
+			overflow: hidden;
+			max-width: 1240px;
+			min-height: 410px;
+			margin: 10px auto 0;
+			padding: 72px clamp(28px, 8vw, 110px);
+			border-radius: 36px;
+			background: var(--blue-light);
+			isolation: isolate;
+		}
+
+		.hero::before, .hero::after {
+			position: absolute;
+			z-index: -1;
+			content: "";
+			border-radius: 50%;
+		}
+
+		.hero::before {
+			width: 390px;
+			height: 390px;
+			right: -90px;
+			top: -130px;
+			background: var(--pink);
+		}
+
+		.hero::after {
+			width: 230px;
+			height: 230px;
+			right: 230px;
+			bottom: -150px;
+			background: var(--lilac);
+		}
+
+		.hero-copy { max-width: 660px; }
+		.eyebrow { margin-bottom: 13px; color: #b6657f; font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+		.hero h1 { max-width: 650px; margin-bottom: 17px; font-size: clamp(2.8rem, 6vw, 5.7rem); line-height: .96; letter-spacing: -.06em; }
+		.hero h1 span { color: #c66c8d; }
+		.hero-description { max-width: 530px; margin-bottom: 28px; color: #565c73; font-size: 1.1rem; }
+		.tag-row { display: flex; flex-wrap: wrap; gap: 9px; }
+		.tag { padding: 7px 13px; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+		.tag-pink { background: #f9d3de; }
+		.tag-blue { background: #cbeaf5; }
+		.tag-yellow { background: var(--yellow); }
+
+		.monogram {
+			position: absolute;
+			right: 11%;
+			bottom: 42px;
+			display: grid;
+			width: 160px;
+			height: 160px;
+			place-items: center;
+			border: 12px solid rgba(255,255,255,.68);
+			border-radius: 50% 50% 46% 54%;
+			color: var(--ink);
+			background: var(--pink-light);
+			box-shadow: var(--shadow);
+			font: 700 3.4rem/1 Georgia, serif;
+			transform: rotate(7deg);
+		}
+
+		.section { max-width: 1240px; margin: 0 auto; padding: 78px 32px 18px; }
+		.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+		.section-heading h2 { margin-bottom: 0; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: -.04em; }
+		.section-heading p { max-width: 390px; margin-bottom: 2px; color: var(--muted); font-size: .95rem; }
+
+		.masonry { columns: 3 260px; column-gap: 22px; }
+		.pin { display: inline-block; width: 100%; margin: 0 0 22px; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); break-inside: avoid; }
+		.pin h3 { margin-bottom: 9px; font-size: 1.2rem; }
+		.pin p { margin-bottom: 0; color: #555a70; font-size: .94rem; }
+		.pin-pink { background: var(--pink-light); }
+		.pin-blue { background: var(--blue-light); }
+		.pin-lilac { background: #f4f0fc; }
+		.pin-yellow { background: #fff8dc; }
+		.pin-white { background: var(--white); border: 1px solid #f1e9ef; }
+		.pin-tall { padding-bottom: 38px; }
+		.pin-icon { display: block; margin-bottom: 17px; font-size: 1.9rem; }
+		.fact-list { display: grid; gap: 13px; margin: 0; }
+		.fact-list div { display: grid; grid-template-columns: 1fr 1.3fr; gap: 10px; padding-bottom: 10px; border-bottom: 1px dashed #d5cad7; }
+		.fact-list div:last-child { padding-bottom: 0; border-bottom: 0; }
+		.fact-label { color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+		.fact-value { font-size: .9rem; }
+		.skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+		.skill-list li { padding: 8px 11px; border: 1px solid rgba(32,36,58,.12); border-radius: 12px; font: 700 .75rem "Trebuchet MS", Arial, sans-serif; }
+		.quote { margin: 0; font-size: 1.45rem; line-height: 1.25; }
+		.quote cite { display: block; margin-top: 18px; color: var(--muted); font: .72rem "Trebuchet MS", Arial, sans-serif; font-style: normal; letter-spacing: .08em; text-transform: uppercase; }
+		.english-quote { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid rgba(32,36,58,.15); font: 700 1rem/1.35 "Trebuchet MS", Arial, sans-serif; }
+
+		.contact {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			align-items: center;
+			gap: 30px;
+			margin-top: 55px;
+			padding: 42px clamp(26px, 6vw, 72px);
+			border-radius: 28px;
+			background: var(--ink);
+			color: var(--white);
+		}
+
+		.contact h2 { margin-bottom: 7px; font-size: 2rem; }
+		.contact p { margin-bottom: 0; color: #d9dbea; }
+		.button { display: inline-block; padding: 13px 19px; border-radius: 14px; color: var(--ink); background: var(--pink); font-size: .8rem; font-weight: 700; text-decoration: none; }
+		.button:hover, .button:focus { background: var(--yellow); }
+
+		footer { max-width: 1240px; margin: 0 auto; padding: 35px 32px 42px; color: var(--muted); font: .73rem "Trebuchet MS", Arial, sans-serif; }
+		address { font-style: normal; }
+
+		@media (max-width: 700px) {
+			.topbar { align-items: flex-start; padding: 18px 20px; }
+			nav { gap: 10px 15px; justify-content: flex-end; }
+			.hero { min-height: 540px; margin: 0 12px; padding: 48px 25px; border-radius: 28px; }
+			.hero h1 { font-size: 3.25rem; }
+			.hero-description { font-size: 1rem; }
+			.monogram { right: 50%; bottom: 30px; width: 115px; height: 115px; font-size: 2.3rem; transform: translateX(50%) rotate(7deg); }
+			.section { padding: 58px 20px 10px; }
+			.section-heading { display: block; }
+			.section-heading p { margin-top: 10px; }
+			.contact { grid-template-columns: 1fr; margin-top: 40px; }
+			footer { padding: 30px 20px; }
+		}
+	</style>
+</head>
+<body>
+	<header class="topbar">
+		<a class="brand" href="#inicio" aria-label="Ir al inicio">
+			<span class="brand-mark">M</span>
+			<span>mi espacio</span>
+		</a>
+		<nav aria-label="Navegacion principal">
+			<a href="#perfil">Perfil</a>
+			<a href="#intereses">Intereses</a>
+			<a href="#contacto">Contacto</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero" id="inicio" aria-labelledby="titulo-principal">
+			<div class="hero-copy">
+				<p class="eyebrow">Hola, soy</p>
+				<h1 id="titulo-principal">Maria Alejandra <span>Peña Vargas.</span></h1>
+				<p class="hero-description">Una mente curiosa construyendo su camino entre el codigo, las ideas y la inteligencia artificial.</p>
+				<div class="tag-row" aria-label="Mis areas de interes">
+					<span class="tag tag-pink">Programacion</span>
+					<span class="tag tag-blue">Software</span>
+					<span class="tag tag-yellow">IA</span>
+				</div>
+			</div>
+			<div class="monogram" aria-hidden="true">MAP</div>
+		</section>
+
+		<section class="section" id="perfil" aria-labelledby="titulo-perfil">
+			<div class="section-heading">
+				<h2 id="titulo-perfil">Un poco sobre mi</h2>
+				<p>Pequeñas piezas de mi historia, mis habilidades y lo que me inspira.</p>
+			</div>
+
+			<div class="masonry">
+				<article class="pin pin-pink pin-tall">
+					<span class="pin-icon" aria-hidden="true">✦</span>
+					<h3>Mi historia</h3>
+					<p>Soy estudiante de la Universidad Industrial de Santander, en el programa de Ingenieria en Inteligencia Artificial. Me entusiasma aprender, crear y convertir problemas en nuevas posibilidades.</p>
+				</article>
+
+				<article class="pin pin-blue">
+					<span class="pin-icon" aria-hidden="true">⌁</span>
+					<h3>Datos que me definen</h3>
+					<dl class="fact-list">
+						<div><dt class="fact-label">Nacimiento</dt><dd class="fact-value">13 de mayo de 2009</dd></div>
+						<div><dt class="fact-label">Edad</dt><dd class="fact-value">17 años</dd></div>
+						<div><dt class="fact-label">Origen</dt><dd class="fact-value">Piedecuesta, Santander</dd></div>
+					</dl>
+				</article>
+
+				<article class="pin pin-lilac" id="intereses">
+					<span class="pin-icon" aria-hidden="true">♡</span>
+					<h3>Lo que me mueve</h3>
+					<p>Programacion, desarrollo de software e inteligencia artificial. Me interesa descubrir como la tecnologia puede convertirse en soluciones utiles.</p>
+				</article>
+
+				<article class="pin pin-white">
+					<span class="pin-icon" aria-hidden="true">＋</span>
+					<h3>Mis fortalezas</h3>
+					<ul class="skill-list">
+						<li>Pensamiento logico</li>
+						<li>Resolver problemas</li>
+						<li>Aprendizaje autonomo</li>
+						<li>Trabajo en equipo</li>
+					</ul>
+				</article>
+
+				<article class="pin pin-yellow">
+					<span class="pin-icon" aria-hidden="true">☼</span>
+					<blockquote class="quote">
+						Cada reto es una oportunidad para aprender algo nuevo.
+						<cite>Mi forma de avanzar</cite>
+					</blockquote>
+					<p class="english-quote" lang="en">If not me. Who? If not now. When?</p>
+				</article>
+
+				<article class="pin pin-blue pin-tall">
+					<span class="pin-icon" aria-hidden="true">▱</span>
+					<h3>Mi recorrido</h3>
+					<dl class="fact-list">
+						<div><dt class="fact-label">2025</dt><dd class="fact-value">Egreso del Colegio Carlos Vicente Rey, en Piedecuesta.</dd></div>
+						<div><dt class="fact-label">2026-2</dt><dd class="fact-value">Inicio de mis estudios de pregrado en la UIS.</dd></div>
+					</dl>
+				</article>
+
+				<article class="pin pin-pink">
+					<span class="pin-icon" aria-hidden="true">Aa</span>
+					<h3>Idiomas</h3>
+					<p>Español <strong>·</strong> Ingles</p>
+				</article>
+			</div>
+
+			<section class="contact" id="contacto" aria-labelledby="titulo-contacto">
+				<div>
+					<h2 id="titulo-contacto">Hablemos</h2>
+					<p>Siempre abierta a aprender, compartir ideas y conocer nuevos proyectos.</p>
+				</div>
+				<address><a class="button" href="tel:+573209247766">320 924 7766</a></address>
+			</section>
+		</section>
+	</main>
+
+	<footer>
+		<p>© 2026 Maria Alejandra Peña Vargas · Hecho con curiosidad y muchas ideas.</p>
+	</footer>
+</body>
+</html>
